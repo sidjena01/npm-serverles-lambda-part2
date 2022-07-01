@@ -26,7 +26,7 @@ pipeline {
                                 echo "The servicename is: $services"
                                 cd $services
                                 npm install
-                                serverless deploy --stage $ENVIRONMENT
+                                serverless deploy --dev $ENVIRONMENT
                                 cd ..
                             fi
                         fi
