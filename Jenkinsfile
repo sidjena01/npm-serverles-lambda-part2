@@ -32,7 +32,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh '''    
-                    echo 'Run tests and publish results'
+                    echo "Run tests and publish results"
                     echo "[ Current directory ] : " `pwd`
                     //npm run test
                 '''  
