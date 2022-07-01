@@ -26,8 +26,10 @@ pipeline {
                                 echo "The servicename is: $services"
                                 cd $services
                                 npm install
-                                serverless deploy --dev $ENVIRONMENT
-                                cd ..
+				ls -lart
+				pwd
+                                //serverless deploy --dev $ENVIRONMENT
+                                //cd ..
                             fi
                         fi
                     done
@@ -51,7 +53,7 @@ pipeline {
             steps {
                 sh '''
                     echo 'Modify vars and promote package to Production'
-                    serverless deploy --stage $ENVIRONMENT
+                    //serverless deploy --stage $ENVIRONMENT
                 '''    
             }
         }        
