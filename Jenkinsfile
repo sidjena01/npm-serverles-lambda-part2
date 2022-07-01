@@ -19,7 +19,7 @@ pipeline {
                     npm install
                     for services in `ls`;do
                         if [ -d "$services" ]; then
-			   if [ "$services" == "weight" ]; then
+			   if [ "$services" == "weight" ] || [ "$services" == "utils" ]; then
 			   	echo "Execut"
 			   else
 			        echo "Skipped"
