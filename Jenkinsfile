@@ -17,23 +17,11 @@ pipeline {
                     sh '''
                     cd services
                     npm install
-                    for services in `ls`
-                    do
+                    for services in `ls`;do
                         if [ -d "$services" ]; then
-			    echo $services
-                            if [ "$services" == "utils" ] || [ "$services" == "helpers" ] || [ "$services" == "test" ]  ||  [ "$services" == "node_modules" ]  ; then
-                                echo "skipping folders : $services"
-                            else
-                                echo "The servicename is: $services"
-                                //cd $services
-                                //npm install
-				ls -lart
-				pwd
-                                //serverless deploy --dev $ENVIRONMENT
-                                //cd ..
-                            fi
-                        fi
-                    done
+			   echo $services
+			fi
+                    done;
                     '''
             }
         }
