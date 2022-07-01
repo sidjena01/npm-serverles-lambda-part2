@@ -24,7 +24,7 @@ pipeline {
                                 echo "skipping folders : $services"
                             else
                                 echo "The servicename is: $services"
-                                cd $services
+                                cd services
                                 npm install
                                 serverless deploy --stage $ENVIRONMENT
                                 cd ..
