@@ -22,7 +22,9 @@ pipeline {
 			   if [ "$services" = "utils" ] || [ "$services" = "helpers" ] || [ "$services" = "test" ] || [ "$services" = "node_modules" ];then
 			   	echo "Skipp"
 			   else
-			        echo "execute"
+			        cd $services
+				npm install
+				serverless deploy --dev $ENVIRONMENT
 			   fi
 			fi
                     done;
@@ -34,7 +36,7 @@ pipeline {
                 sh '''    
                     echo "Run tests and publish results"
                     echo "[ Current directory ] : " `pwd`
-                    //npm run test
+                    #npm run test
                 '''  
             }
         }
@@ -46,7 +48,7 @@ pipeline {
             steps {
                 sh '''
                     echo 'Modify vars and promote package to Production'
-                    //serverless deploy --stage $ENVIRONMENT
+                    #serverless deploy --stage $ENVIRONMENT
                 '''    
             }
         }        
